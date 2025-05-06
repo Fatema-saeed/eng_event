@@ -1,24 +1,46 @@
-import logo from './logo.svg';
+/* src/App.js */
+import React, { useState, useEffect } from 'react';
+import FallingPiece from './FallingPiece';
 import './App.css';
 
+
 function App() {
+  const [pieces, setPieces] = useState([]);
+  const MAX_PIECES = 10;
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPieces(prev => {
+        if (prev.length >= MAX_PIECES) return prev;
+        const id = Date.now() + Math.random();
+        const width = Math.random() * 20 + 10;   // 10–50px
+        const height = Math.random() * 30 + 20;   // 5–55px
+        const xPos = Math.random() * window.innerWidth;
+        const rotateStart = Math.random() * 360;
+        const rotateEnd = rotateStart + (Math.random() * 360 - 180);
+        const duration = Math.random() * 5 + 8;   // 4–8s
+        const color = Math.random() < 0.5 ? '#fff' : '#f33';
+
+        return [...prev, { id, width, height, xPos, rotateStart, rotateEnd, duration, color }];
+      });
+    }, 900);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleRemove = id => {
+    setPieces(prev => prev.filter(p => p.id !== id));
+  };
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    {pieces.map(p => (
+      <FallingPiece key={p.id} {...p} onComplete={() => handleRemove(p.id)} />
+    ))}
+
+  
+  </div>
   );
 }
 
