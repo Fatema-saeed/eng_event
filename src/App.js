@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import FallingPiece from './FallingPiece';
 import './App.css';
-
+import { Box } from '@mui/material';
 
 function App() {
   const [pieces, setPieces] = useState([]);
@@ -31,16 +31,50 @@ function App() {
     setPieces(prev => prev.filter(p => p.id !== id));
   };
 
-
-
   return (
     <div className="App">
-    {pieces.map(p => (
-      <FallingPiece key={p.id} {...p} onComplete={() => handleRemove(p.id)} />
-    ))}
+      {pieces.map(p => (
+        <FallingPiece key={p.id} {...p} onComplete={() => handleRemove(p.id)} />
+      ))}
+      <Box sx={{ position: "relative", width: "100vw", height: "100vh" }}>
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.75)",
+          }}
+        />
 
-  
-  </div>
+        {/* Buttons added in the center */}
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            display: "flex",
+            gap: "30px"
+          }}
+        >
+          {/* First Button */}
+          <button className="button">
+            <div className="dots_border"></div>
+          
+            <span className="text_button">كـــــــــتابة</span>
+          </button>
+
+          {/* Second Button */}
+          <button className="button">
+            <div className="dots_border"></div>
+            
+            <span className="text_button">صـــــــورة</span>
+          </button>
+        </Box>
+      </Box>
+    </div>
   );
 }
 
