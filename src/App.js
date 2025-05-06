@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import FallingPiece from './FallingPiece';
 import './App.css';
 import { Box, Button } from '@mui/material';
+import GoldenRatioIntro from './WelcomeScreen';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
     {pieces.map(p => (
       <FallingPiece key={p.id} {...p} onComplete={() => handleRemove(p.id)} />
     ))}
+    
     <Box sx={{    position: "relative",
   width:" 100vw",
   height: "100vh"
@@ -53,7 +55,9 @@ function App() {
             backgroundColor: "rgba(0, 0, 0, 0.75)", 
           }}
         />
+        <GoldenRatioIntro/>
     </Box>
+
   </div>
   );
 }

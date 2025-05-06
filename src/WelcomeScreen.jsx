@@ -1,31 +1,93 @@
-// src/WelcomeLottie.jsx
-import React, { useEffect, useState } from 'react';
-import { Player } from '@lottiefiles/react-lottie-player';
-import animationData from './animations/welcome.json';
+"use client"
 
-export default function WelcomeLottie({ onFinish }) {
-  const [show, setShow] = useState(true);
+import { useEffect, useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { Box } from "@mui/material"
+
+const text = "الأمسية الختامية"
+
+export default function GoldenRatioIntro() {
+  const [show, setShow] = useState(true)
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShow(false);
-      onFinish();
-    }, 2000); // total time to show animation
-    return () => clearTimeout(timer);
-  }, [onFinish]);
+    const timer = setTimeout(() => setShow(false), 2000) // Hide after 2s
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
-    <>
-      {show && (
-        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-white z-50">
-          <Player
-            autoplay
-            keepLastFrame
-            src={animationData}
-            style={{ height: 300, width: 300 }}
-          />
-        </div>
-      )}
-    </>
-  );
+    <Box
+      sx={{
+        height: "100px",
+        width: "250px",
+        backgroundColor: "black",
+        borderRadius: "10px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        position: "relative",
+        overflow: "hidden"
+      }}
+    >
+      <AnimatePresence>
+        {show && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              fontFamily: "monospace",
+              fontSize: "2.5rem",
+              color: "white"
+            }}
+          >
+            <motion.span
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: {
+                    staggerChildren: 0.15
+                  }
+                }
+              }}
+              style={{ display: "flex" }}
+            >
+              {text.split("").map((char, index) => (
+                <motion.span
+                  key={index}
+                  variants={{
+                    hidden: { opacity: 0, y: 10 },
+                    visible: { opacity: 1, y: 0 }
+                  }}
+                  transition={{
+                    duration: 0.3,
+                    ease: "easeOut"
+                  }}
+                  style={{ display: "inline-block" }}
+                >
+                  {char}
+                </motion.span>
+              ))}
+              {/* Typing cursor */}
+              <motion.span
+                animate={{ opacity: [1, 0, 1] }}
+                transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
+                style={{
+                  width: "6px",
+                  height: "2.5rem",
+                  backgroundColor: "white",
+                  marginLeft: "4px",
+                  display: "inline-block"
+                }}
+              />
+            </motion.span>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </Box>
+  )
 }
