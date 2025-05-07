@@ -1,9 +1,9 @@
+
 body {
-  font-family: "Markazi Text", serif;
-}
+  font-family: "Alexandria", sans-serif;}
 .App {
   text-align: center;
-  font-family: "Markazi Text", serif;
+  font-family: "Alexandria", sans-serif;
   font-weight: 500;
 
   width: 100vw;
@@ -11,8 +11,8 @@ body {
 
   overflow: hidden;
 }
+/* From Uiverse.io by MuhammadHasann */ 
 .button {
-  font-family: "Markazi Text", serif !important;
   --black-700: hsla(0 0% 12% / 1);
   --border_radius: 9999px;
   --transtion: 0.3s ease-in-out;
@@ -51,7 +51,7 @@ body {
   border-radius: var(--border_radius);
   box-shadow: inset 0 0.5px hsl(0, 0%, 100%), inset 0 -1px 2px 0 hsl(0, 0%, 0%),
     0px 4px 10px -4px hsla(0 0% 0% / calc(1 - var(--active, 0))),
-    0 0 0 calc(var(--active, 0) * 0.2rem) hsla(0, 0%, 100%, 0.75);
+    0 0 0 calc(var(--active, 0) * 0.375rem) hsla(0, 0%, 100%, 0.75);
 
   transition: all var(--transtion);
   z-index: 0;
@@ -66,14 +66,14 @@ body {
 
   width: 100%;
   height: 100%;
-  background-color: #ea2810;
+  background-color: hsla(0, 94%, 50%, 0.75);
   background-image: radial-gradient(
       at 51% 89%,
-      #ea2810 0px,
+      rgb(237, 12, 12) 0px,
       transparent 50%
     ),
-    radial-gradient(at 100% 100%, #ea2810 0px, transparent 50%),
-    radial-gradient(at 22% 91%, #ea2810 0px, transparent 50%);
+    radial-gradient(at 100% 100%, rgb(138, 24, 24) 0px, transparent 50%),
+    radial-gradient(at 22% 91%, rgb(255, 0, 0) 0px, transparent 50%);
   background-position: top;
 
   opacity: var(--active, 0);
@@ -178,19 +178,10 @@ body {
   }
 }
 
-.button .text_button {
-  font-family: "Markazi Text", serif !important;
+.button .text-button {
   position: relative;
-  z-index: 10;
-
-  background-image: linear-gradient(
-    90deg,
-    hsla(0 0% 100% / 1) 0%,
-    hsla(0 0% 100% / var(--active, 0)) 120%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-
+  z-index: 1;
   font-size: 1rem;
-  color: transparent;
+  font-family: "Alexandria", sans-serif !important;
+  color: white;
 }

@@ -1,12 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap');
 body {
-  margin: 0;
-  font-family: "Markazi Text", serif;
-  background: url('/public/bg7.png') no-repeat center center fixed;
-  background-size: cover;
 
+    margin: 0;
+    font-family: "Alexandria", sans-serif;
+    background: url('/public/bg8.png') no-repeat center center; 
+    background-size: cover; 
 }
+  
+
 
 
 code {
-  font-family: "Markazi Text", serif;
+  font-family: "Alexandria", sans-serif;
 }
