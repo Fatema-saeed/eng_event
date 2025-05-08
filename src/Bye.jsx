@@ -38,7 +38,7 @@ export default function Bye() {
               }}
            
         >
-        <TypingText text="نشكرك على مشاركتك الجميلة  نتمنى لك أمسية ممتعة" />
+        <TypingText text="نشكرك على المشاركة النتائج ستظهر على الشاشة" />
         </motion.div>
       )}
     </AnimatePresence>
