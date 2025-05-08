@@ -36,7 +36,8 @@ function App() {
     <div className="App">
       <Box sx={{ position: "relative", width: "100vw", height: "100vh" }}>
         <motion.img
-src={`${process.env.PUBLIC_URL}/logo3.png`}          alt="Intro"
+          src="/logo3.png"
+          alt="Intro"
           variants={{
             intro: {
               scale: 2,
@@ -97,11 +98,11 @@ src={`${process.env.PUBLIC_URL}/logo3.png`}          alt="Intro"
             <TypingText text="ارمِ العملة وشاهد النتيجة!" />
             <Box sx={{ display: "flex", gap: "30px", my: "20px" }}>
               <button onClick={() => handleChoice("image")} className="button">
-                <div className="dots_border"></div>
+                <div className="dots-border"></div>
                 <span className="text-button">صـــــــورة</span>
               </button>
               <button onClick={() => handleChoice("text")} className="button">
-                <div className="dots_border"></div>
+                <div className="dots-border"></div>
                 <span className="text-button">كــــــتابة</span>
               </button>
             </Box>
@@ -124,7 +125,8 @@ src={`${process.env.PUBLIC_URL}/logo3.png`}          alt="Intro"
 
         {/* Add logo here at the bottom center */}
         <img 
-src={`${process.env.PUBLIC_URL}/logo4.png`}          alt="Logo" 
+          src="/logo4.png" 
+          alt="Logo" 
           className="logo" 
         />
       </Box>
