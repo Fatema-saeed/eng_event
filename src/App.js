@@ -36,7 +36,7 @@ function App() {
     <div className="App">
       <Box sx={{ position: "relative", width: "100vw", height: "100vh" }}>
         <motion.img
-          src="/logo3.png"
+          src={process.env.PUBLIC_URL + "/logo3.png"}
           alt="Intro"
           variants={{
             intro: {
@@ -125,7 +125,7 @@ function App() {
 
         {/* Add logo here at the bottom center */}
         <img 
-          src="/logo4.png" 
+          src={process.env.PUBLIC_URL + "/logo4.png"}
           alt="Logo" 
           className="logo" 
         />
