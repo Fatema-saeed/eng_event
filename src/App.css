@@ -185,3 +185,12 @@ body {
   font-family: "Alexandria", sans-serif !important;
   color: white;
 }
+.logo {
+  position: fixed;
+  bottom: 20px;  /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;  /* Make sure it's on top of other elements */
+  width: 250px;  /* Adjust the size */
+  height: auto;
+}
