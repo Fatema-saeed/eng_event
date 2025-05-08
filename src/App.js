@@ -103,7 +103,7 @@ function App() {
             top: 0,
             left: 0,
             right: 0,
-            backgroundColor: "rgba(255, 255, 255, 0.19)",
+            backgroundColor: "rgba(0, 0, 0, 0.13)",
             zIndex: 2,
           }}
         />
