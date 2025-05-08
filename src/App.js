@@ -122,6 +122,13 @@ function App() {
             <Bye />
           </Box>
         )}
+
+        {/* Add logo here at the bottom center */}
+        <img 
+          src="/logo4.png" 
+          alt="Logo" 
+          className="logo" 
+        />
       </Box>
     </div>
   );
