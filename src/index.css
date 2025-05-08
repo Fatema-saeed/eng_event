@@ -1,15 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap');
+
 body {
-
-    margin: 0;
-    font-family: "Alexandria", sans-serif;
-    background: url('/public/bg8.png') no-repeat center center; 
-    background-size: cover; 
-}
-  
-
-
-
-code {
+  margin: 0;
   font-family: "Alexandria", sans-serif;
+  background: url('/public/bg8.png') no-repeat center center; 
+  background-size: cover; /* Ensure the background covers the entire viewport */
+  background-position: center center; /* Keep the important part centered */
+  background-attachment: fixed; /* Optional, can create a parallax effect on desktop */
+  height: 100vh; /* Make sure the body takes up the entire height */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* For small devices, ensure the image isn't cropped */
+@media (max-width: 768px) {
+  body {
+    background-size: cover; /* Keep the cover style to fill the screen */
+    background-position: top center; /* Align the image to the top */
+  }
+}
+
+/* For very small screens like phones */
+@media (max-width: 480px) {
+  body {
+    background-size: cover; /* Ensures the background still covers the screen */
+    background-position: top center; /* Adjust positioning so the top part is visible */
+  }
 }
