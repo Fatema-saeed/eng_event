@@ -125,11 +125,11 @@ function App() {
             <TypingText text="ارمِ العملة وشاهد النتيجة!" />
             <Box sx={{ display: "flex", gap: "30px", my: "20px" }}>
               <button onClick={() => handleChoice("image")} className="button">
-                <div className="dots-border"></div>
+                <div className="dots_border"></div>
                 <span className="text-button">صـــــــورة</span>
               </button>
               <button onClick={() => handleChoice("text")} className="button">
-                <div className="dots-border"></div>
+                <div className="dots_border"></div>
                 <span className="text-button">كــــــتابة</span>
               </button>
             </Box>
