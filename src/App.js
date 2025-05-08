@@ -122,7 +122,7 @@ function App() {
               zIndex: 4
             }}
           >
-            <TypingText text="اختر رميتك وشاهد النتيجة ! " />
+            <TypingText text="ارمِ العملة وشاهد النتيجة!" />
             <Box sx={{ display: "flex", gap: "30px", my: "20px" }}>
               <button onClick={() => handleChoice("image")} className="button">
                 <div className="dots-border"></div>
