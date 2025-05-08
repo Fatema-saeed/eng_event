@@ -3,7 +3,7 @@
 body {
   margin: 0;
   font-family: "Alexandria", sans-serif;
-  background: url('/bg8.png') no-repeat center center; 
+  background: url('/public/bg8.png') no-repeat center center;
   background-size: cover; /* Ensure the background covers the entire viewport */
   background-position: center center; /* Keep the important part centered */
   background-attachment: fixed; /* Optional, can create a parallax effect on desktop */
