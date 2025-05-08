@@ -1,6 +1,7 @@
 {
   "name": "eng-event",
   "version": "0.1.0",
+  "homepage": "https://fatema-saeed.github.io/eng_event",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.14.0",
